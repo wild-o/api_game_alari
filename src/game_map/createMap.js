@@ -25,14 +25,13 @@ export default function createMap(seed = Math.random() * 8, width, height) {
     which may not work out
   */
   const middleOfMap = { x: Math.floor(x / 2), y: Math.floor(y / 2) };
-  const seedUsed = Math.abs(seed) > 0 ? seed : 42069
   for (let row = 0; row <= y; row++) {
     for (let col = 0; col <= x; col++) {
       const distX = Math.abs(middleOfMap.x - col)
       const distY = Math.abs(middleOfMap.y - row)
       const distFromCenter = Math.sqrt(distX * distX + distY * distY)
-      const val1 = Math.sin(Math.sqrt(((Math.PI + seedUsed) * (distX + distY)) % ((distFromCenter + Math.PI) % Math.PI))) % Math.PI
-      const val2 = Math.cos((Math.sqrt((Math.PI + seedUsed) * (distY + distX)) % ((distFromCenter + Math.PI) % Math.PI))) % Math.PI
+      const val1 = Math.sin(Math.sqrt(((Math.PI + seed) * (distX + distY)) % ((distFromCenter + Math.PI) % Math.PI))) % Math.PI
+      const val2 = Math.cos((Math.sqrt((Math.PI + seed) * (distY + distX)) % ((distFromCenter + Math.PI) % Math.PI))) % Math.PI
       const finalVal = val1 + val2;
       if (Math.abs(finalVal) > 1.5) {
       map.nodes.push({ position: { x: col, y: row }, generatorNumber: finalVal, nodeKind: Math.floor((Math.abs(finalVal) * 22) % 22) });
