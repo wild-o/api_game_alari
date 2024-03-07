@@ -1,15 +1,50 @@
 import './config/types.js'
 import routes from "./config/routeIndex.js"
+import express from 'express'
 
+/**
+ * @property {Express} app
+ */
 class Router {
   /**
-   * @param {Express} app
+   * @param {number} port
    */
-  constructor(app) {
+  constructor(port) {
+    this.app = express()
+    // adding middleware to parse json body
+    this.app.use(express.json())
+
+    this.app.listen(port, (error) => {
+      if (!error) {
+        console.log("Server is Successfully Running, and this.app is listening on port " + port)
+      }
+      else {
+        console.log("Error occurred, server can't start", error)
+      }
+    })
+
     this.routes = routes
     this.routes.forEach(route => {
-      app.get(route.path, route.callback)
-      app.get(`/docs${route.path}`, /**@param {Request} req @param {Response} res */(req, res) => {
+      switch (route.method) {
+        case "get":
+          this.app.get(route.path, route.handler)
+          break
+        case "put":
+          this.app.put(route.path, route.handler)
+          break
+        case "post":
+          this.app.post(route.path, route.handler)
+          break
+        case "patch":
+          this.app.patch(route.path, route.handler)
+          break
+        case "delete":
+          this.app.delete(route.path, route.handler)
+          break
+      }
+
+
+      this.app.get(`/docs${route.path}`, /**@param {Request} req @param {Response} res */(req, res) => {
         /**
          * @type {Route}
          */
