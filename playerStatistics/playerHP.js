@@ -1,5 +1,4 @@
 /*Should grabbing a player's name and HP be in itself a route or a function*/
-import PromptSync from "prompt-sync";
 import "../src/config/types.js";
 /**
  *
@@ -25,7 +24,8 @@ export default function obtainPlayerName(name) {
   return playerInfo;
 }
 
-
+//Array of status conditions
+//Crippled, Nauseated, Drowsy? 
 
 //Alternate way that this could perhaps be created
 const player = {
