@@ -1,8 +1,9 @@
 import './types.js'
 import about from "../routes/about.js"
 import root from "../routes/root.js"
-import availbleRoutes from '../routes/availableRoutes.js'
+import availableRoutes from '../routes/availableRoutes.js'
 import genMap from '../routes/genMap.js'
+import obtainPlayerName from '../../playerStatistics/playerHP.js'
 
 // todo make a type for authRequirements, so that we can have standard options for it.
 
@@ -25,11 +26,19 @@ const routes = [
     handler: about
   },
   {
+    path:"/name",
+    method:"get",
+    usage:"This route will get the user's name",
+    authRequirements:"none", 
+    handler: obtainPlayerName
+  },
+  
+  {
     path: "/routes",
     method: "get",
     usage: "This is used to get the full list of available routes",
     authRequirements: "none",
-    handler: availbleRoutes
+    handler: availableRoutes
   },
   {
     path: "/gen_map",
@@ -38,5 +47,7 @@ const routes = [
     authRequirements: "token required (probably)",
     handler: genMap
   }
+
+
 ]
 export default routes

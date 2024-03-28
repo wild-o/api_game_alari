@@ -36,3 +36,17 @@ export default function displayMap(map) {
   display2 += "==========\n"
   return display + display2;
 }
+
+
+
+// Alternate way that this could be created here
+const GameMap = {
+  name: '',
+  age: 0,
+  create: function (name, age) {
+    const newAuthor = Object.create(this);
+    newAuthor.name = name;
+    newAuthor.age = age;
+    return newAuthor;
+  }
+};
