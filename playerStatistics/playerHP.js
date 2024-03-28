@@ -7,23 +7,6 @@ import "../src/config/types.js";
  * @returns {Player}
  */
 
-let prompt = PromptSync();
-let maximumHP = 200;
-
-export default function obtainPlayerName(name) {
-  let pname = prompt("What is your name?");
-  this.playerName = pname;
-
-  const playerInfo = [
-    {
-      name: playerName,
-      health: maximumHP,
-    },
-  ];
-
-  return playerInfo;
-}
-
 //Array of status conditions
 //Crippled, Nauseated, Drowsy? 
 
