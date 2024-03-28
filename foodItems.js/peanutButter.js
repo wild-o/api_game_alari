@@ -11,10 +11,10 @@
 
 const PeanutButter = {
     
-    peanutButter, //Amount of peanut butter in grams 
-    jelly,        //Amount of jelly in grams
-    bool,      //Whether the sandwich has crust or not
-    bool,     //Whether the sandwich is toasted or not
-    int, //Number of bread slices used
-    breadType //Type of bread used
+    peanutButter: 0 , //Amount of peanut butter in grams 
+    jelly: 0 ,        //Amount of jelly in grams
+    hasCrust: false,      //Whether the sandwich has crust or not
+    isToasted: false,     //Whether the sandwich is toasted or not
+    numberOfSlices: 0, //Number of bread slices used
+    breadType: "Sourdough" //Type of bread used
 };

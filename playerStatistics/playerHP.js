@@ -1,7 +1,6 @@
 /*Should grabbing a player's name and HP be in itself a route or a function*/
 import PromptSync from "prompt-sync";
 import "../src/config/types.js";
-
 /**
  *
  * @param {string} name
