@@ -3,7 +3,7 @@ import about from "../routes/about.js"
 import root from "../routes/root.js"
 import availableRoutes from '../routes/availableRoutes.js'
 import genMap from '../routes/genMap.js'
-import obtainPlayerName from '../../playerStatistics/playerHP.js'
+
 
 // todo make a type for authRequirements, so that we can have standard options for it.
 
@@ -25,14 +25,6 @@ const routes = [
     authRequirements: "none",
     handler: about
   },
-  {
-    path:"/name",
-    method:"get",
-    usage:"This route will get the user's name",
-    authRequirements:"none", 
-    handler: obtainPlayerName
-  },
-  
   {
     path: "/routes",
     method: "get",

@@ -38,15 +38,3 @@ export default function displayMap(map) {
 }
 
 
-
-// Alternate way that this could be created here
-const GameMap = {
-  name: '',
-  age: 0,
-  create: function (name, age) {
-    const newAuthor = Object.create(this);
-    newAuthor.name = name;
-    newAuthor.age = age;
-    return newAuthor;
-  }
-};
