@@ -52,3 +52,13 @@ const player = {
     },
   },
 };
+
+let uniqueSpecialPoints = [
+        {skillName: "Strength", level: 0},
+        {skillName: "Perception", level: 0},
+        {skillName: "Endurance", level: 0},
+        {skillName: "Charisma", level: 0},
+        {skillName: "Intelligence", level: 0},
+        {skillName: "Agility", level: 0},
+        {skillName: "Luck", level: 0}
+]
