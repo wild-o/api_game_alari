@@ -30,6 +30,8 @@ const player = {
   hunger: 100, //Base Hunger level
   thirst: 100, //Base Thirst level
 
+
+  //Severity determines the type of status effect a player will possess. 
   body: {
     head: {
       status: [
@@ -40,8 +42,8 @@ const player = {
     },
   },
 
-  mind: {
-    psyche: {
+  //Same here, this is what the scale would look like. 50 being the worst.
+  psyche: {
       status: [
         { statusName: "nervous", severity: 10 },
         { statusName: "anxious", severity: 20 },
@@ -50,15 +52,19 @@ const player = {
         { statusName: "psycho", severity: 50 },
       ],
     },
-  },
+  
+
+
+  //The Special Points start at Level 0 and can scale up dependent on different situations.
+  uniqueSpecialPoints: [
+    { skillName: "Strength", level: 0 },
+    { skillName: "Perception", level: 0 },
+    { skillName: "Endurance", level: 0 },
+    { skillName: "Charisma", level: 0 },
+    { skillName: "Intelligence", level: 0 },
+    { skillName: "Agility", level: 0 },
+    { skillName: "Luck", level: 0 },
+  ],
 };
 
-let uniqueSpecialPoints = [
-        {skillName: "Strength", level: 0},
-        {skillName: "Perception", level: 0},
-        {skillName: "Endurance", level: 0},
-        {skillName: "Charisma", level: 0},
-        {skillName: "Intelligence", level: 0},
-        {skillName: "Agility", level: 0},
-        {skillName: "Luck", level: 0}
-]
+//Add new file which goes over different scenarios in which these elements can change.
